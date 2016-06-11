@@ -30,6 +30,7 @@ Thumbs.db
 .hg
 .idea
 .svn
+forest
 bower_components
 dist
 build
