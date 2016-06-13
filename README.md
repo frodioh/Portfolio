@@ -1,4 +1,4 @@
-# Loftshool portfolio
+# Loftschool portfolio
 
 Getting started:
 

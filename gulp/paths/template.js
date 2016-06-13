@@ -1,5 +1,8 @@
 'use strict';
 
 module.exports = [
-  './source/template/index.jade'
+  './src/template/index.jade',
+  './src/template/about.jade',
+  './src/template/blog.jade',
+  './src/template/works.jade'
 ];

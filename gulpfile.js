@@ -27,6 +27,7 @@ $.gulp.task('default', $.gulp.series(
     'jade',
     'js.process',
     'copy.image',
+    'copy.fonts',
     'css.foundation'
   ),
   $.gulp.parallel(
