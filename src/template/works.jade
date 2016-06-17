@@ -19,8 +19,58 @@ html
                 img.slider__thumbnail-down-image(src="assets/img/slide-down.jpg")
             a.slider__thumbnail.slider__thumbnail--up(href="#")
                 img.slider__thumbnail-up-image(src="assets/img/slide-up.jpg")
-      section.reviews
-        h2.section-title.section-title--reviews Мои работы
-          include ../icons/about_header.svg
       section.feedback
+        h2.section-title.section-title--feedback Что обо мне говорят
+          include ../icons/about_header.svg
+        .reviews
+          .review
+            .review__photo-wrapper
+              img(src="assets/img/review-photo-1.jpg").review__photo
+            p.review__text.
+              Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            .review__author Ковальчук Дмитрий
+            .review__caption - основатель Losftschool
+          .review
+            .review__photo-wrapper
+              img(src="assets/img/review-photo-2.jpg").review__photo
+            p.review__text.
+              Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            .review__author Зар Захаров
+            .review__caption - главный преподаватель
+        form.feedback-form
+          h2.feedback-form__title Связаться со мной
+          input(type="text" placeholder="Имя").feedback-form__name
+          input(type="email" placeholder="Email").feedback-form__email
+          textarea(placeholder="Ваше сообщение").feedback-form__text
+          .feedback-form__buttons
+            input(type="submit", value="Отправить").feedback-form__submit
+            input(type="button", value="Очистить").feedback-form__clear
       footer.inner-footer
+        .inner-footer__top
+          .inner-footer__caption
+            .inner-footer__caption-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+          .inner-footer__links
+            ul.footer-nav
+              li.footer-nav__item
+                a(href="#").footer-nav__link Мои работы
+              li.footer-nav__item
+                a(href="#").footer-nav__link Обо мне
+              li.footer-nav__item
+                a(href="#").footer-nav__link Блог
+              li.footer-nav__item
+                a(href="#").footer-nav__link Авторизация
+            .social-links
+              a.social-links__link(href="#")
+                include ../icons/vk.svg
+              a.social-links__link(href="#")
+                include ../icons/github.svg
+              a.social-links__link(href="#")
+                include ../icons/in.svg
+          .inner-footer__quote
+            .inner-footer__quote-text.
+              Всегда пишите код так, будто сопровождать его будет склоный к насилию психопат, который знает, где вы живете.
+            .inner-footer__quote-author.
+              - Martin Golding
+        .inner-footer__bot
+          .inner-footer__copyright
+            © Владимир Астахов | Создано с любовью в LoftSchool | 2016

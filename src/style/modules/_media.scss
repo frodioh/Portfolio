@@ -31,6 +31,29 @@
   .person-info__caption--big {
     font-size: 16px;
   }
+  .reviews {
+    width: 720px;
+  }
+  .review {
+    width: 50%;
+  }
+  .inner-footer__caption {
+    width: 50%;
+    &::after {
+      left: auto;
+      right: 0;
+      top: 2.5%;
+      bottom: 2.5%;
+      width: 1px;
+      height: auto;
+    }
+  }
+  .inner-footer__links {
+    width: 50%;
+    &::after {
+      display: none;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -60,6 +83,24 @@
   .slider__thumbnails {
     order: 3;
     width: 50%;
+  }
+  .inner-footer__caption {
+    width: 33.33%;
+  }
+  .inner-footer__links {
+    width: 33.33%;
+    &::after {
+      display: block;
+      left: auto;
+      right: 0;
+      top: 2.5%;
+      bottom: 2.5%;
+      width: 1px;
+      height: auto;
+    }
+  }
+  .inner-footer__quote {
+    width: 33.33%;
   }
 }
 
