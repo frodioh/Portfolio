@@ -1,0 +1,26 @@
+doctype html
+html
+  include modules/head.jade
+  body
+    .inner-wrapper
+      include modules/inner-header.jade
+      section.my-works
+        h2.section-title.section-title--works Мои работы
+          include ../icons/works_header.svg
+        .slider
+          .slider__current
+            img.slider__current-image(src="assets/img/current-slide.png")
+          .slider__description
+            .slider__header Сайт школы онлайн образования
+            .slider__caption Html, css, javascript
+            a.slider-btn(href="#") Посмотреть сайт
+          .slider__thumbnails
+            a.slider__thumbnail.slider__thumbnail--down(href="#")
+                img.slider__thumbnail-down-image(src="assets/img/slide-down.jpg")
+            a.slider__thumbnail.slider__thumbnail--up(href="#")
+                img.slider__thumbnail-up-image(src="assets/img/slide-up.jpg")
+      section.reviews
+        h2.section-title.section-title--reviews Мои работы
+          include ../icons/about_header.svg
+      section.feedback
+      footer.inner-footer

@@ -1,11 +1,72 @@
 @media (max-width: 767px) {
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) {
+  .main-header {
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .person-card {
+    width: 348px;
+  }
+  .person-info--centered {
+    width: 400px;
+  }
+  .main-footer {
+    padding-bottom: 40px;
+  }
+  .main-footer__container {
+    width: 480px;
+  }
+  .main-footer__copyright::after {
+    content: '|\00a0';
+  }
+  .section-title {
+    font-size: 47px;
+  }
+  .person-info__name--big {
+    font-size: 35px;
+  }
+  .person-info__caption--big {
+    font-size: 16px;
+  }
 }
 
-@media (min-width: 1200px) and (max-width: 1799px) {
+@media (min-width: 1200px) {
+  .person-card {
+    width: 380px;
+  }
+  .section-title {
+    font-size: 63px;
+  }
+  .slider {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .slider__description {
+    width: 50%;
+    height: 100%;
+    align-self: flex-end;
+    order: 0;
+    background-color: #ebefe2;
+  }
+  .slider__current {
+    width: 50%;
+    order: 1;
+  }
+  .slider__thumbnails {
+    order: 3;
+    width: 50%;
+  }
 }
 
 @media (min-width: 1800px) {
+  .main-header {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 25px;
+  }
 }

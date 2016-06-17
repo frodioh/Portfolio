@@ -3,6 +3,28 @@ html
   include modules/head.jade
   body
     .wrapper
-      header.welcome-header
-      section.user-block
-      footer.welcome-footer
+      header.main-header
+        a.main-header__authorization(href="#") Авторизоваться
+      .index-container
+        .person-card
+          include modules/person-info.jade
+          .social-links.social-links--centered
+            a.social-links__link(href="#")
+              include ../icons/vk.svg
+            a.social-links__link(href="#")
+              include ../icons/github.svg
+            a.social-links__link(href="#")
+              include ../icons/in.svg
+          nav.index-menu
+            ul.index-menu__list
+              li.index-menu__item
+                a.index-menu__link(href="works.html") Мои работы
+              li.index-menu__item
+                a.index-menu__link(href="about.html") Обо мне
+              li.index-menu__item
+                a.index-menu__link(href="#") Блог
+        .login-form
+    footer.main-footer
+      .main-footer__container
+        .main-footer__copyright © Родион Федотов 
+        .main-footer__caption создано с любовью в LoftSchool | 2016
