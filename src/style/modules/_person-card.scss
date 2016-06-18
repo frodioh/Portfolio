@@ -37,7 +37,8 @@
 .person-info__name {
   margin: 0;
   margin-bottom: 3px;
-  font-size: 28px;
+  font-size: 2rem;
+  font-size: 1.50rem;
   font-weight: normal;
   color: #fff;
 }
@@ -45,12 +46,12 @@
 .person-info__caption {
   margin: 0;
   margin-bottom: 35px;
-  font: normal 16px 'Roboto Regular', Arial, sans-serif;
+  font: normal 1.14rem 'Roboto Regular', Arial, sans-serif;
   color: #fff;
   opacity: 0.8;
 }
 
-.person-info--centered {
+.person-info--inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -60,9 +61,78 @@
 }
 
 .person-info__name--about {
-  font: normal 21px 'Roboto Medium', Arial, sans-serif;
+  font: normal 1.50rem 'Roboto Medium', Arial, sans-serif;
 }
 
 .person-info__caption--about {
-  font-size: 14px;
+  font-size: 1rem;
+}
+
+//Карточка на внутренних страницах
+
+.person-card-inner {
+  position: relative;
+  min-width: 300px;
+  height: 395px;
+  background: rgba(18,38,32,.6);
+  padding-top: 40px;
+  text-align: center;
+  overflow: hidden;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transform: rotateY(0deg);
+}
+
+.person-info-inner__image-wrap {
+  width: 140px;
+  height: 140px;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.person-info-inner__image-wrap--lit-margin {
+  margin-bottom: 9px;
+}
+
+.person-info-inner__image-wrap--big-margin {
+  margin-bottom: 20px;
+}
+
+.person-info-inner__image {
+  max-width: 100%;
+}
+
+.person-info-inner__name {
+  margin: 0;
+  margin-bottom: 3px;
+  font-size: 1.50rem;
+  font-weight: normal;
+  color: #fff;
+}
+
+.person-info-inner__caption {
+  margin: 0;
+  margin-bottom: 35px;
+  font: normal 1rem 'Roboto Regular', Arial, sans-serif;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.person-info-inner--center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 300px;
+  text-align: center;
+}
+
+.person-info-inner__name--about {
+  font: normal 1.50rem 'Roboto Medium', Arial, sans-serif;
+}
+
+.person-info-inner__caption--about {
+  font-size: 1rem;
 }

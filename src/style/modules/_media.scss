@@ -66,7 +66,7 @@
   .slider {
     flex-direction: row;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
   }
   .slider__description {
