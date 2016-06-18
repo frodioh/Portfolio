@@ -80,10 +80,19 @@ html
         div#forest-map
         .contacts
           h2.section-title.section-title--about-less Контакты
-          .contacts__skype radio_rodeo
-          .contacts__email fedotov.dev@gmail.com
-          .contacts__tel +7 909 116 35 32
-          .contacts__address Пермь
+          ul.contacts__list
+            li.contacts__item
+              include ../icons/skype.svg
+              span.contacts__text radio_rodeo
+            li.contacts__item
+              include ../icons/envelope2.svg
+              span.contacts__text fedotov.dev@gmail.com
+            li.contacts__item
+              include ../icons/phone2.svg
+              span.contacts__text +7 909 116 35 32
+            li.contacts__item
+              include ../icons/map_marker.svg
+              span.contacts__text Пермь
       footer.inner-footer
         .inner-footer__top
           .inner-footer__caption

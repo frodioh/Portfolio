@@ -190,6 +190,35 @@
   background: rgba(244,245,240,.85);
   padding: 0 40px;
   padding-bottom: 35px;
-  font: normal 1.14rem 'Roboto', Arial, sans-serif;
+  font: 500 1.14rem 'Roboto', Arial, sans-serif;
   color: #566358;
+}
+
+.contacts__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contacts__item {
+  position: relative;
+  padding-left: 35px;
+  line-height: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.contacts__item svg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.contacts__item svg * {
+  fill: #7e9b5c;
+}
+
+.contacts__text {
+  margin-left: 10px;
 }
