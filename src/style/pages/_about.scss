@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 40px;
+  align-items: center;
 }
 
 .about__inner {
@@ -18,6 +19,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 475px;
+}
+
+.skills__inner {
+  max-width: 475px;
+  margin: 0 auto;
 }
 
 .about__photo {
@@ -28,8 +35,12 @@
 
 .about__text {
   margin: 0;
+  margin-bottom: 15px;
   padding: 0 3%;
   text-align: left;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .section-title--about {
@@ -153,7 +164,7 @@
   display: block;
   width: 100%;
   max-height: 1100px;
-  min-height: 860px;
+  min-height: 100vh;
 }
 
 .gm-style-iw * {
@@ -175,6 +186,7 @@
   top: 30%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  min-width: 320px;
   background: rgba(244,245,240,.85);
   padding: 0 40px;
   padding-bottom: 35px;
