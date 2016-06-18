@@ -1,0 +1,144 @@
+.container-about {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #ebefe2;
+}
+
+.about {
+  background-color: #ebefe2;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.about__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__photo {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.about__text {
+  margin: 0;
+  padding: 0 3%;
+  text-align: left;
+}
+
+.section-title--about {
+  margin-bottom: 20px;
+}
+
+.section-title--skills {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.section-title--abilities {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  display: block;
+  text-transform: none;
+  &::after {
+    display: none;
+  }
+}
+
+.skills {
+  background-color: #f4f5f0;
+}
+
+.skills__text {
+  margin: 0;
+  padding: 0 3%;
+  text-align: left;
+  color: #5d5a55;
+}
+
+.graphs {
+}
+
+.graph {
+  width: 110px;
+  height: 110px;
+  position: relative;
+  display: inline-block;
+}
+
+.graphs__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font: 500 12px 'Roboto', Arial, sans-serif;
+  color: #4e8839;
+}
+
+.graph__svg {
+  fill: none;
+  stroke-width: 20;
+}
+
+.graph__fill {
+  stroke-dasharray: 282.5;
+  transition: all 1s;
+}
+
+.graph__fill--html {
+  stroke-dashoffset: 20;
+}
+
+.graph__fill--css {
+  stroke-dashoffset: 40;
+}
+
+.graph__fill--js {
+  stroke-dashoffset: 150;
+}
+
+.graph__fill--php {
+  stroke-dashoffset: 200;
+}
+
+.graph__fill--mysql {
+  stroke-dashoffset: 200;
+}
+
+.graph__fill--node {
+  stroke-dashoffset: 120;
+}
+
+.graph__fill--mongo {
+  stroke-dashoffset: 180;
+}
+
+.graph__fill--git {
+  stroke-dashoffset: 50;
+}
+
+.graph__fill--gulp {
+  stroke-dashoffset: 70;
+}
+
+.graph__fill--bower {
+  stroke-dashoffset: 100;
+}
+
+.traingle__left--about {
+  fill: #ebefe2;
+}
+
+.traingle__right--about {
+  fill: #ebefe2;
+}
+
+.map {
+  padding-bottom: 500px;
+}

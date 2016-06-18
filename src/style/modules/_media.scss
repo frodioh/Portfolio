@@ -1,11 +1,11 @@
-@media (max-width: 767px) {
-}
-
 @media (min-width: 768px) {
   .main-header {
     text-align: right;
     padding-right: 20px;
     padding-left: 20px;
+  }
+  .inner-header__image {
+    display: block;
   }
   .person-card {
     width: 348px;
@@ -19,17 +19,28 @@
   .main-footer__container {
     width: 480px;
   }
+  .hamburger--right {
+    top: 30px;
+    right: 30px;
+  }
+  .social-links--left {
+    top: 30px;
+    left: 30px;
+  }
   .main-footer__copyright::after {
     content: '|\00a0';
   }
+  .slider__header {
+    font-size: 2.14rem;
+  }
   .section-title {
-    font-size: 47px;
+    font-size: 3.36rem;
   }
-  .person-info__name--big {
-    font-size: 35px;
+  .person-info-inner__name--big {
+    font-size: 2.5rem;
   }
-  .person-info__caption--big {
-    font-size: 16px;
+  .person-info-inner__caption--big {
+    font-size: 1.14rem;
   }
   .reviews {
     width: 720px;
@@ -37,8 +48,13 @@
   .review {
     width: 50%;
   }
+  .review__photo-wrapper {
+    width: 80px;
+    height: 80px;
+  }
   .inner-footer__caption {
     width: 50%;
+    text-align: left;
     &::after {
       left: auto;
       right: 0;
@@ -50,9 +66,54 @@
   }
   .inner-footer__links {
     width: 50%;
+    text-align: center;
     &::after {
       display: none;
     }
+  }
+  .footer-nav {
+    justify-content: flex-start;
+  }
+  .footer-nav__item {
+    margin-right: 1.2rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .inner-footer__quote {
+    text-align: left;
+  }
+  .inner-footer__bot {
+    text-align: center;
+  }
+  .inner-footer__copyright-top {
+    display: inline-block;
+    &::after {
+      content: ' |';
+    }
+  }
+  .inner-footer__copyright-bot {
+    display: inline-block;
+  }
+  .social-links--footer {
+    max-width: 100%;
+    width: auto;
+    justify-content: flex-start;
+  }
+  .social-links__link {
+    margin-right: 25px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .section-title--skills {
+    font-size: 2.14rem;
+  }
+  .section-title--abilities {
+    font-size: 2.14rem;
+  }
+  .conteiner-about {
+    flex-direction: column;
   }
 }
 
@@ -62,6 +123,9 @@
   }
   .section-title {
     font-size: 63px;
+    &--feedback {
+      max-width: 400px;
+    }
   }
   .slider {
     flex-direction: row;
@@ -106,6 +170,31 @@
   .inner-footer__quote {
     width: 33.33%;
   }
+  .footer-nav__item {
+    margin-right: 1.5rem;
+    &:last-child {
+      margin-right: none;
+    }
+  }
+  .container-about {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .about {
+    width: 50%;
+  }
+  .skills {
+    width: 50%;
+  }
+  .section-title--skills {
+    font-size: 2.5rem;
+  }
+  .section-title--abilities {
+    font-size: 2.5rem;
+  }
+  .traingle__right--about {
+    fill: #f4f5f0;
+  }
 }
 
 @media (min-width: 1800px) {
@@ -113,5 +202,23 @@
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 25px;
+  }
+  .about {
+    width: 50%;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .skills {
+    width: 50%;
+    align-items: flex-start;
+  }
+  .section-title--about {
+    width: 50%;
+    text-align: center;
+    margin: 0;
+    margin-top: -30px;
+  }
+  .about__inner {
+    width: 50%;
   }
 }

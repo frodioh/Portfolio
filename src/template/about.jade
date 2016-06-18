@@ -4,3 +4,105 @@ html
   body
     .inner-wrapper
       include modules/inner-header.jade
+      .container-about
+        section.about
+          h2.section-title.section-title--about Обо мне
+            include ../icons/about_header.svg
+          .about__inner
+            img.about__photo(src="assets/img/about-image.jpg")
+            .section-title.section-title--skills Кто я
+            p.about__text.
+              Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. 
+              Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+        section.skills
+          h2.section-title.section-title--skills Чем я могу быть вам полезен
+          p.skills__text.
+            Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+          h2.section-title.section-title--abilities Frontend
+          .graphs
+            .graph
+              svg(width="110", height="110", class="graph__svg")
+                circle(r="45", cx="50%", cy="50%", stroke="#ccc", fill="none")
+                circle(r="45", cx="50%", cy="50%", stroke="#74a163", class="graph__fill graph__fill--html", transform="rotate(90 50% 50%)")
+              span.graphs__text HTML5
+            .graph
+              svg(width="110", height="110", class="graph__svg")
+                circle(r="45", cx="50%", cy="50%", stroke="#ccc", fill="none")
+                circle(r="45", cx="50%", cy="50%", stroke="#74a163", class="graph__fill graph__fill--css", transform="rotate(-90 50% 50%)")
+              span.graphs__text CSS3
+            .graph
+              svg(width="110", height="110", class="graph__svg")
+                circle(r="45", cx="50%", cy="50%", stroke="#ccc", fill="none")
+                circle(r="45", cx="50%", cy="50%", stroke="#74a163", class="graph__fill graph__fill--js", transform="rotate(-90 50% 50%)")
+              span.graphs__text JavaScript & jQuerry
+          h2.section-title.section-title--abilities Backend
+          .graphs
+            .graph
+              svg(width="110", height="110", class="graph__svg")
+                circle(r="45", cx="50%", cy="50%", stroke="#ccc", fill="none")
+                circle(r="45", cx="50%", cy="50%", stroke="#b7c6aa", class="graph__fill graph__fill--php", transform="rotate(-90 50% 50%)")
+              span.graphs__text PHP
+            .graph
+              svg(width="110", height="110", class="graph__svg")
+                circle(r="45", cx="50%", cy="50%", stroke="#ccc", fill="none")
+                circle(r="45", cx="50%", cy="50%", stroke="#b7c6aa", class="graph__fill graph__fill--mysql", transform="rotate(-90 50% 50%)")
+              span.graphs__text mySQL
+            .graph
+              svg(width="110", height="110", class="graph__svg")
+                circle(r="45", cx="50%", cy="50%", stroke="#ccc", fill="none")
+                circle(r="45", cx="50%", cy="50%", stroke="#b7c6aa", class="graph__fill graph__fill--node", transform="rotate(-90 50% 50%)")
+              span.graphs__text Node.js & npm
+            .graph
+              svg(width="110", height="110", class="graph__svg")
+                circle(r="45", cx="50%", cy="50%", stroke="#ccc", fill="none")
+                circle(r="45", cx="50%", cy="50%", stroke="#b7c6aa", class="graph__fill graph__fill--mongo", transform="rotate(-90 50% 50%)")
+              span.graphs__text Mongo.db
+          h2.section-title.section-title--abilities Workflow
+          .graphs
+            .graph
+              svg(width="110", height="110", class="graph__svg")
+                circle(r="45", cx="50%", cy="50%", stroke="#ccc", fill="none")
+                circle(r="45", cx="50%", cy="50%", stroke="#74a163", class="graph__fill graph__fill--git", transform="rotate(-90 50% 50%)")
+              span.graphs__text Git
+            .graph
+              svg(width="110", height="110", class="graph__svg")
+                circle(r="45", cx="50%", cy="50%", stroke="#ccc", fill="none")
+                circle(r="45", cx="50%", cy="50%", stroke="#74a163", class="graph__fill graph__fill--gulp", transform="rotate(-90 55 55)")
+              span.graphs__text Gulp
+            .graph
+              svg(width="110", height="110", class="graph__svg")
+                circle(r="45", cx="50%", cy="50%", stroke="#ccc", fill="none")
+                circle(r="45", cx="50%", cy="50%", stroke="#74a163", class="graph__fill graph__fill--bower", transform="rotate(-90 50% 50%)")
+              span.graphs__text Bower
+      section.map
+      footer.inner-footer
+        .inner-footer__top
+          .inner-footer__caption
+            .inner-footer__caption-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+          .inner-footer__links
+            ul.footer-nav
+              li.footer-nav__item
+                a(href="#").footer-nav__link Мои работы
+              li.footer-nav__item
+                a(href="#").footer-nav__link Обо мне
+              li.footer-nav__item
+                a(href="#").footer-nav__link Блог
+              li.footer-nav__item
+                a(href="#").footer-nav__link Авторизация
+            .social-links.social-links--footer
+              a.social-links__link(href="#")
+                include ../icons/vk.svg
+              a.social-links__link(href="#")
+                include ../icons/github.svg
+              a.social-links__link(href="#")
+                include ../icons/in.svg
+          .inner-footer__quote
+            .inner-footer__quote-text.
+              Всегда пишите код так, будто сопровождать его будет склоный к насилию психопат, который знает, где вы живете.
+            .inner-footer__quote-author.
+              - Martin Golding
+        .inner-footer__bot
+          .inner-footer__copyright-top.
+            © Владимир Астахов
+          .inner-footer__copyright-bot.
+            Создано с любовью в LoftSchool | 2016
