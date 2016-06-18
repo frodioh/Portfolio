@@ -32,8 +32,8 @@
 .slider__description {
   background-color: #ebefe2;
   height: 40%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .slider__thumbnails {
@@ -42,14 +42,28 @@
 
 .slider__header {
   font: 1.50rem 'Sansus Webissimo', Arial, sans-serif;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   color: #566358;
   text-transform: uppercase;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 3px;
+    width: 56px;
+    transform: translateX(-50%);
+    background-color: #566358;
+  }
 }
 
 .slider__caption {
   font: 500 1rem 'Roboto', Arial, sans-serif;
   text-transform: uppercase;
   color: #65873d;
+  margin-bottom: 20px;
 }
 
 .slider-btn {
