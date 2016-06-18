@@ -1,0 +1,83 @@
+doctype html
+html
+  include modules/head.jade
+  body
+    .inner-wrapper
+      include modules/blog-header.jade
+      section.blog
+        .blog-inner
+          aside.titles
+            ul.titles__list
+              li.titles__item
+                a.titles__link Самое важное в SASS
+              li.titles__item
+                a.titles__link Приёмы в вёрстке, без которых не обходится ни один сайт
+              li.titles__item
+                a.titles__link Самый необходимый набор Gulp плагинов
+              li.titles__item
+                a.titles__link Почему я выбрал Jade
+          section.articles
+            article.article
+              h1.article__header Самое важное в SASS
+              date.article__date 22 ноября 2016
+              .article__text
+                p.article__paragraph.
+                  Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                p.article__paragraph.
+                  Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                code.article__code.code
+                  ul.code__lines
+                    li.code__line 1
+                    li.code__line 2
+                    li.code__line 3
+                    li.code__line 4
+                    li.code__line 5
+                  .code__text
+                    .code__string.
+                      <span class="code__comment-text">//присвоить</span>
+                    .code__string.
+                      $(document).data(<span class="code__quote-text">'prop'</span>, { anything: <span class="code__quote-text">"любой объект"</span> })
+                    .code__string <br>
+                    .code__string.
+                      <span class="code__comment-text">//прочитать</span>
+                    .code__string.
+                      alert($(document).data(<span class="code__quote-text">'prop'</span>).anything) <span class="code__comment-text">// любой объект</span>
+            article.article
+              h1.article__header Приёмы в вёрстке, без которых не обходится ни один сайт
+              date.article__date 22 ноября 2016
+              .article__text
+                p.article__paragraph.
+                  Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                p.article__paragraph.
+                  Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+      footer.inner-footer
+        .inner-footer__top
+          .inner-footer__caption
+            .inner-footer__caption-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+          .inner-footer__links
+            ul.footer-nav
+              li.footer-nav__item
+                a(href="#").footer-nav__link Мои работы
+              li.footer-nav__item
+                a(href="#").footer-nav__link Обо мне
+              li.footer-nav__item
+                a(href="#").footer-nav__link Блог
+              li.footer-nav__item
+                a(href="#").footer-nav__link Авторизация
+            .social-links.social-links--footer
+              a.social-links__link(href="#")
+                include ../icons/vk.svg
+              a.social-links__link(href="#")
+                include ../icons/github.svg
+              a.social-links__link(href="#")
+                include ../icons/in.svg
+          .inner-footer__quote
+            .inner-footer__quote-text.
+              Всегда пишите код так, будто сопровождать его будет склоный к насилию психопат, который знает, где вы живете.
+            .inner-footer__quote-author.
+              - Martin Golding
+        .inner-footer__bot
+          .inner-footer__copyright-top.
+            © Владимир Астахов
+          .inner-footer__copyright-bot.
+            Создано с любовью в LoftSchool | 2016

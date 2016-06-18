@@ -124,6 +124,12 @@
   .conteiner-about {
     flex-direction: column;
   }
+  .blog-card__bg {
+    max-width: 120%;
+  }
+  .blog-inner {
+    padding-bottom: 270px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -203,6 +209,19 @@
   }
   .traingle__right--about {
     fill: #f4f5f0;
+  }
+  .titles {
+    position: static;
+    transform: none;
+    &::after {
+      display: none;
+    }
+  }
+  .articles {
+    width: 60%;
+  }
+  .blog-inner {
+    padding-bottom: 180px;
   }
 }
 
