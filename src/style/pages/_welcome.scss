@@ -15,6 +15,7 @@ body {
   min-height: 568px;
   background: url(../img/bg.jpg) center center;
   background-size: cover;
+  overflow: hidden;
   &::after {
   content: '';
   display: block;

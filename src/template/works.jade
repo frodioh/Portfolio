@@ -1,9 +1,9 @@
 doctype html
 html
-  include modules/head.jade
+  include modules/head/head.jade
   body
     .inner-wrapper
-      include modules/works-header.jade
+      include modules/header/works-header.jade
       section.my-works
         h2.section-title.section-title--works Мои работы
           include ../icons/works_header.svg
@@ -45,34 +45,4 @@ html
           .feedback-form__buttons
             input(type="submit", value="Отправить").feedback-form__submit
             input(type="button", value="Очистить").feedback-form__clear
-      footer.inner-footer
-        .inner-footer__top
-          .inner-footer__caption
-            .inner-footer__caption-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
-          .inner-footer__links
-            ul.footer-nav
-              li.footer-nav__item
-                a(href="#").footer-nav__link Мои работы
-              li.footer-nav__item
-                a(href="#").footer-nav__link Обо мне
-              li.footer-nav__item
-                a(href="#").footer-nav__link Блог
-              li.footer-nav__item
-                a(href="#").footer-nav__link Авторизация
-            .social-links.social-links--footer
-              a.social-links__link(href="#")
-                include ../icons/vk.svg
-              a.social-links__link(href="#")
-                include ../icons/github.svg
-              a.social-links__link(href="#")
-                include ../icons/in.svg
-          .inner-footer__quote
-            .inner-footer__quote-text.
-              Всегда пишите код так, будто сопровождать его будет склоный к насилию психопат, который знает, где вы живете.
-            .inner-footer__quote-author.
-              - Martin Golding
-        .inner-footer__bot
-          .inner-footer__copyright-top.
-            © Владимир Астахов
-          .inner-footer__copyright-bot.
-            Создано с любовью в LoftSchool | 2016
+      include modules/inner-footer.jade
