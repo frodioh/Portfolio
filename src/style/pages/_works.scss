@@ -308,6 +308,13 @@
   text-decoration: none;
   color: #fff;
   font: bold 1.07rem 'Roboto', Arial, sans-serif;
+  &:hover {
+    color: #badcad;
+  }
+}
+
+.social-links__link--footer:hover svg * {
+  fill: #ffffff;
 }
 
 .inner-footer__quote-text {
