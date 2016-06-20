@@ -84,6 +84,7 @@ body {
   font-size: 1.14rem;
   border-right: 2px solid rgba(255,255,255,.5);
   padding: 12px 0;
+  transition: background-color .2s;
   &:hover {
     background: #487f39;
   }
@@ -105,8 +106,13 @@ body {
   margin: 0 auto;
 }
 
+.social-links__link svg * {
+  transition: fill .2s;
+}
+
 .social-links__link {
   opacity: .5;
+  transition: opacity .2s;
   &:hover {
     opacity: 1;
   }
@@ -284,6 +290,7 @@ body {
   background: #618f55;
   color: #fff;
   text-decoration: none;
+  transition: background-color .2s;
   &:first-child {
     border-right: 2px solid #9bb39b;
     border-radius: 0 0 0 5px;

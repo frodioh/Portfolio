@@ -76,6 +76,10 @@
   text-decoration: none;
   color: #fff;
   position: relative;
+  transition: top 1s;
+  &:hover {
+    top: 1px;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -308,6 +312,7 @@
   text-decoration: none;
   color: #fff;
   font: bold 1.07rem 'Roboto', Arial, sans-serif;
+  transition: color .3s;
   &:hover {
     color: #badcad;
   }

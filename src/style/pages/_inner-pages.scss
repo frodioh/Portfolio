@@ -77,6 +77,11 @@
   font-size: 0;
   opacity: .7;
   z-index: 2;
+  transition: bottom.2s;
+  &:hover {
+    bottom: 48px;
+    opacity: 1;
+  }
 }
 
 .anchor-link svg * {
