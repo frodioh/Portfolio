@@ -16,13 +16,15 @@ window.onload = function() {
     menu = document.getElementsByClassName("menu")[0];
   }
 
-  if (authBtn !== undefined) {
+  if (authBtn) {
     authBtn.onclick = function() {
     card.style = "transform: rotateY(-270deg)";
     form.style = "transform: rotateY(0deg)";
     }
   }
-  hamburger.onclick = function() {
+  if (hamburger) {
+    hamburger.onclick = function() {
     menu.classList.add("menu--active");
+    }
   }
 }

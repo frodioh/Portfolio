@@ -27,6 +27,8 @@ body {
   padding: 10px 0;
   font-size: 0;
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
 .authorization-btn {
@@ -51,6 +53,7 @@ body {
 }
 
 .index-container {
+  position: relative;
 }
 
 .index-menu {
