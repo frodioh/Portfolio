@@ -17,4 +17,4 @@ Loftschool portfolio (forest)
       images/              картинки
       js/                  js файлы
       style/               файлы стилей (scss)
-      template             разметка (jade)
+      template/            разметка (jade)
