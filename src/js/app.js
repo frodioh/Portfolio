@@ -1,7 +1,7 @@
 window.onload = function() {
   var card, form, authBtn, hamburger, menu;
-  if (document.getElementsByClassName("person-card")[0] !== undefined) {
-    card = document.getElementsByClassName("person-card")[0];
+  if (document.getElementsByClassName("index-container")[0] !== undefined) {
+    card = document.getElementsByClassName("index-container")[0];
   }
   if (document.getElementsByClassName("login-form")[0] !== undefined) {
     form = document.getElementsByClassName("login-form")[0];
@@ -18,13 +18,12 @@ window.onload = function() {
 
   if (authBtn) {
     authBtn.onclick = function() {
-    card.style = "transform: rotateY(-270deg)";
-    form.style = "transform: rotateY(0deg)";
+      card.classList.toggle("index-container--flip");
     }
   }
   if (hamburger) {
-    hamburger.onclick = function() {
-    menu.classList.add("menu--active");
+      hamburger.onclick = function() {
+      menu.classList.add("menu--active");
     }
   }
 }

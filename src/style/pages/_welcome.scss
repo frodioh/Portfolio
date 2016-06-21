@@ -54,6 +54,17 @@ body {
 
 .index-container {
   position: relative;
+  perspective: 1000px;
+}
+
+.index-container--flip .flipper {
+  transform: rotateY(180deg);
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
 .index-menu {
@@ -126,12 +137,13 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  backface-visibility: hidden;
   background: rgba(18,38,32,.6);
   text-align: center;
   overflow: hidden;
   border-radius: 0 0 5px 5px;
   padding: 35px 20px 75px 20px;
-  transform: rotateY(90deg);
+  transform: rotateY(180deg);
 }
 
 .login-form__header {

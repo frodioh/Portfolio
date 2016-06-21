@@ -10,7 +10,8 @@
   overflow: hidden;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  transform: rotateY(0deg);
+  z-index: 2;
+  backface-visibility: hidden;
 }
 
 .person-info__image-wrap {

@@ -7,40 +7,41 @@ html
         a.authorization-btn(href="#") Авторизоваться
       .container
         .index-container
-          .person-card.person-card--rotating
-            include modules/person-info.jade
-            .social-links.social-links--centered
-              a.social-links__link(href="#")
-                include ../icons/vk.svg
-              a.social-links__link(href="#")
-                include ../icons/github.svg
-              a.social-links__link(href="#")
-                include ../icons/in.svg
-            nav.index-menu
-              ul.index-menu__list
-                li.index-menu__item
-                  a.index-menu__link(href="works.html") Мои работы
-                li.index-menu__item
-                  a.index-menu__link(href="about.html") Обо мне
-                li.index-menu__item
-                  a.index-menu__link(href="blog.html") Блог
-          form.login-form.login-form--rotating
-            .login-form__header Авторизуйтесь
-            .login-form__login-container
-              input(type="text" placeholder="Логин").login-form__login
-            .login-form__pass-container
-              input(type="password" placeholder="Пароль").login-form__pass
-            .login-form__captcha.captcha
-              input(type="checkbox" id="captcha").captcha__check
-              label(for="captcha").captcha__check-label Я человек
-              .captcha__question Вы точно не робот?
-              input(type="radio" name="captcha-radio" id="captcha-radio-yes").captcha__radio
-              label(for="captcha-radio-yes").captcha__radio-label Да
-              input(type="radio" name="captcha-radio" id="captcha-radio-no").captcha__radio
-              label(for="captcha-radio-no").captcha__radio-label Не уверен
-            .login-form__links
-              a(href="index.html").login-form__link На главную
-              a(href="#").login-form__link Войти
+          .flipper
+            .person-card.person-card--rotating
+              include modules/person-info.jade
+              .social-links.social-links--centered
+                a.social-links__link(href="#")
+                  include ../icons/vk.svg
+                a.social-links__link(href="#")
+                  include ../icons/github.svg
+                a.social-links__link(href="#")
+                  include ../icons/in.svg
+              nav.index-menu
+                ul.index-menu__list
+                  li.index-menu__item
+                    a.index-menu__link(href="works.html") Мои работы
+                  li.index-menu__item
+                    a.index-menu__link(href="about.html") Обо мне
+                  li.index-menu__item
+                    a.index-menu__link(href="blog.html") Блог
+            form.login-form.login-form--rotating
+              .login-form__header Авторизуйтесь
+              .login-form__login-container
+                input(type="text" placeholder="Логин").login-form__login
+              .login-form__pass-container
+                input(type="password" placeholder="Пароль").login-form__pass
+              .login-form__captcha.captcha
+                input(type="checkbox" id="captcha").captcha__check
+                label(for="captcha").captcha__check-label Я человек
+                .captcha__question Вы точно не робот?
+                input(type="radio" name="captcha-radio" id="captcha-radio-yes").captcha__radio
+                label(for="captcha-radio-yes").captcha__radio-label Да
+                input(type="radio" name="captcha-radio" id="captcha-radio-no").captcha__radio
+                label(for="captcha-radio-no").captcha__radio-label Не уверен
+              .login-form__links
+                a(href="index.html").login-form__link На главную
+                a(href="#").login-form__link Войти
     footer.main-footer
       .main-footer__container
         .main-footer__copyright © Родион Федотов 
