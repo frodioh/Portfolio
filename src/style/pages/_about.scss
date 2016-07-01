@@ -76,17 +76,26 @@
 }
 
 .graphs {
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .graph {
   width: 110px;
   height: 110px;
   margin-bottom: 30px;
+  margin-right: 38px;
   position: relative;
   display: inline-block;
   &:nth-last-child(1),
   &:nth-last-child(2) {
     margin-bottom: 0;
+  }
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+  &:last-of-type {
+    margin-right: 0;
   }
 }
 
@@ -109,44 +118,63 @@
   transition: all 1s;
 }
 
+@keyframes filling {
+  0% {
+    stroke-dashoffset: 282.5;
+  }
+  100% {
+    stroke-dashoffset: var(--offset);
+  }
+}
+
 .graph__fill--html {
-  stroke-dashoffset: 20;
+  --offset: 20;
+  animation: filling 3s forwards;
 }
 
 .graph__fill--css {
-  stroke-dashoffset: 40;
+  --offset: 40;
+  animation: filling 3s forwards;
 }
 
 .graph__fill--js {
-  stroke-dashoffset: 150;
+  --offset: 150;
+  animation: filling 3s forwards;
 }
 
 .graph__fill--php {
-  stroke-dashoffset: 200;
+  --offset: 180;
+  animation: filling 3s forwards;
 }
 
 .graph__fill--mysql {
-  stroke-dashoffset: 200;
+  --offset: 200;
+  animation: filling 3s forwards;
 }
 
 .graph__fill--node {
-  stroke-dashoffset: 120;
+  --offset: 120;
+  animation: filling 3s forwards;
 }
 
 .graph__fill--mongo {
-  stroke-dashoffset: 180;
+  --offset: 180;
+  animation: filling 3s forwards;
 }
 
 .graph__fill--git {
-  stroke-dashoffset: 50;
+  --offset: 50;
+  animation: filling 3s forwards;
 }
 
 .graph__fill--gulp {
-  stroke-dashoffset: 70;
+  --offset: 70;
+  animation: filling 3s forwards;
 }
 
 .graph__fill--bower {
-  stroke-dashoffset: 100;
+  --offset: 100;
+  animation: filling 3s forwards;
 }
 
 .traingle__left--about {

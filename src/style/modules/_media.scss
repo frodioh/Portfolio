@@ -12,6 +12,42 @@
 /////////
 @media (min-width: 768px) {
 
+  .hamburger {
+    width: 40px;
+    height: 35px;
+  }
+
+  .hamburger__top,
+  .hamburger__middle,
+  .hamburger__bot {
+    width: 40px;
+    height: 5px;
+  }
+
+  .hamburger__middle {
+    top: 15px;
+  }
+
+  .hamburger--transformed {
+    .hamburger__top {
+      width: 45px;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) rotateZ(-45deg);
+    }
+
+    .hamburger__middle {
+      opacity: 0;
+    }
+
+    .hamburger__bot {
+      width: 45px;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
+    }
+  }
+
   .main-header {
     text-align: right;
     padding-right: 20px;
@@ -189,6 +225,20 @@
     font-size: 2.14rem;
   }
 
+  .graphs {
+    max-width: none;
+    margin: auto;
+  }
+
+  .graph {
+    &:nth-child(2n) {
+      margin-right: 38px;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
 }
 
 //////////
@@ -345,6 +395,11 @@
     padding-left: 40px;
   }
 
+  .section-title--abilities {
+    text-align: left;
+    padding-left: 40px;
+  }
+
   .blog-card__title {
     font-size: 4.5rem;
   }
@@ -392,4 +447,12 @@
     width: 50%;
   }
 
+}
+
+@media (max-height: 650px) {
+  #forest-map,
+  .inner-header,
+  .slider {
+    min-height: 650px;
+  }
 }

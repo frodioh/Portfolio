@@ -2,6 +2,10 @@ doctype html
 html
   include modules/head/about-head.jade
   body
+    .preloader
+      .preloader__container
+        .preloader__text 0
+        include ../icons/forest.svg
     include modules/menu.jade
     .inner-wrapper
       include modules/header/about-header.jade
@@ -11,7 +15,7 @@ html
             include ../icons/about_header.svg
           .about__inner
             img.about__photo(src="assets/img/about-image.jpg")
-            .section-title.section-title--about-less Кто я
+            h2.section-title.section-title--about-less Кто я
             p.about__text.
               Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
             p.about__text.
@@ -21,7 +25,7 @@ html
             h2.section-title.section-title--about-less Чем я могу быть вам полезен
             p.skills__text.
               Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-            h2.section-title.section-title--abilities Frontend
+          h2.section-title.section-title--abilities Frontend
           .graphs
             .graph
               svg(width="110", height="110", class="graph__svg")

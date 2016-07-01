@@ -22,6 +22,7 @@
 }
 
 .slider__current-image {
+  max-width: 100%;
   max-height: 80%;
   position: absolute;
   top: 50%;
@@ -34,6 +35,8 @@
   height: 40%;
   padding-top: 40px;
   padding-bottom: 40px;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .slider__thumbnails {
@@ -157,7 +160,7 @@
   height: 51px;
   overflow: hidden;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: -15px;
 }
 
 .review__photo {
@@ -165,10 +168,8 @@
 }
 
 .review__text {
-  margin: 0;
-  margin-top: -25px;
-  padding-top: 25px;
-  margin-bottom: 15px;
+  margin: 0 0 15px;
+  padding: 25px 0 0;
   color: #556358;
   background: url(../icons/quotes.svg) no-repeat 0 0;
   background-size: 75px 62px;
@@ -179,7 +180,7 @@
 .review__author {
   font: italic bold 1.14rem 'Roboto', Arial, sans-serif;
   color: #65873d;
-  margin-bottom: 5px;
+  margin: 0 0 5px;
 }
 
 .review__caption {
@@ -190,8 +191,7 @@
   min-width: 300px;
   max-width: 380px;
   margin: 0 auto;
-  background: url(../img/feedback-form-bg.png) no-repeat 0 0;
-  background-size: cover;
+  background: url(../img/feedback-form-bg.png) no-repeat 0 0/cover;
   padding-top: 40px;
   border-radius: 5px;
   overflow: hidden;
@@ -218,11 +218,11 @@
   &__text {
     display: block;
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     border: none;
     border-radius: 10px;
     padding: 15px 20px;
-    margin-bottom: 20px;
+    outline: none;
   }
   &__text {
     height: 140px;
@@ -232,8 +232,7 @@
   }
   &__submit,
   &__clear {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0;
     color: #fff;
     border: none;
     font: 500 1.14rem 'Roboto', Arial, sans-serif;

@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = [
-  './bower_components/jquery/dist/jquery.min.js'
+  './src/js/jquery-2.2.4.min.js'
 ];

@@ -12,15 +12,69 @@ body {
   position: relative;
   width: auto;
   height: 100%;
-  min-height: 568px;
   background: url(../img/bg.jpg) center center;
   background-size: cover;
   overflow: hidden;
+  min-height: 568px;
+  display: none;
   &::after {
   content: '';
   display: block;
   height: 55px;
   }
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../img/prel-bg.jpg) no-repeat center center;
+  z-index: 11;
+}
+
+.preloader__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.preloader__svg {
+  fill: transparent;
+}
+
+@keyframes line {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: -300;
+  }
+}
+
+.preloader__line {
+  stroke: #fff;
+  stroke-dasharray: 100 94;
+  animation: line 2s infinite;
+}
+
+.preloader__line--second {
+  animation: line 2s 2.35s infinite;
+}
+
+.preloader__line--third {
+  animation: line 2s 2.7s infinite;
+}
+
+.preloader__text {
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .main-header {
@@ -39,6 +93,29 @@ body {
   border: 1px solid #fff;
   border-radius: 20px;
   font-size: 1rem;
+  transition: background-color .5s,
+              border-color .5s,
+              opacity .7s;
+  &:hover {
+    background-color: #4e8839;
+    border-color: #729e19;
+  }
+  &--clicked {
+    opacity: 0;
+  }
+}
+
+.click-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  z-index: 1;
+  &--display {
+    display: block;
+  }
 }
 
 .container {
@@ -55,16 +132,25 @@ body {
 .index-container {
   position: relative;
   perspective: 1000px;
+  z-index: 2;
+}
+
+.flipper {
+  transform-origin: center top;
+  transition: transform .6s,
+              opacity .6s;
+  transform-style: preserve-3d;
+  position: relative;
+  opacity: 1;
+}
+
+.flipper--unload {
+  transform: rotateX(-30deg);
+  opacity: 0;
 }
 
 .index-container--flip .flipper {
   transform: rotateY(180deg);
-}
-
-.flipper {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
 }
 
 .index-menu {
@@ -122,6 +208,7 @@ body {
 }
 
 .social-links__link {
+  display: inline-block;
   opacity: .5;
   transition: opacity .2s;
   &:hover {
@@ -325,10 +412,8 @@ body {
 }
 
 .main-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  margin-top: -62px;
   padding-bottom: 10px;
   text-align: center;
   color: #fff;

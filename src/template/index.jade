@@ -2,12 +2,17 @@ doctype html
 html
   include modules/head/head.jade
   body
+    .preloader
+      .preloader__container
+        .preloader__text 0
+        include ../icons/forest.svg
     .wrapper
       header.main-header
         a.authorization-btn(href="#") Авторизоваться
       .container
+        .click-area
         .index-container
-          .flipper
+          .flipper.flipper--unload
             .person-card.person-card--rotating
               include modules/person-info.jade
               .social-links.social-links--centered
