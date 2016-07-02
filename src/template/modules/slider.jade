@@ -1,0 +1,38 @@
+.slider#slider
+  .slider__container
+    .slider__current
+      ul.slider__current-list
+        li.slider__current-item
+          img.slider__current-image(src="http://lorempixel.com/300/400")
+        li.slider__current-item.slider__current-item--active
+          img.slider__current-image(src="http://lorempixel.com/300/200")
+        li.slider__current-item
+          img.slider__current-image(src="http://lorempixel.com/350/220")
+        li.slider__current-item
+          img.slider__current-image(src="http://lorempixel.com/400/400")
+    .slider__description
+      .slider__description-container
+        .slider__header Сайт школы онлайн образования
+        .slider__caption Html, css, javascript
+        a.slider-btn(href="#") Посмотреть сайт
+    .slider__thumbnails
+      .thumbnail.thumbnail--down
+        ul.thumbnail__list
+          li.thumbnail__item.thumbnail__item--active
+            img(src="http://lorempixel.com/300/400").thumbnail__image
+          li.thumbnail__item
+            img(src="http://lorempixel.com/300/200").thumbnail__image
+          li.thumbnail__item
+            img(src="http://lorempixel.com/350/220").thumbnail__image
+          li.thumbnail__item
+            img(src="http://lorempixel.com/400/400").thumbnail__image
+      .thumbnail.thumbnail--up
+        ul.thumbnail__list
+          li.thumbnail__item
+            img(src="http://lorempixel.com/300/400").thumbnail__image
+          li.thumbnail__item
+            img(src="http://lorempixel.com/300/200").thumbnail__image
+          li.thumbnail__item.thumbnail__item--active
+            img(src="http://lorempixel.com/350/220").thumbnail__image
+          li.thumbnail__item
+            img(src="http://lorempixel.com/400/400").thumbnail__image

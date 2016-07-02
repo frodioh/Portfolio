@@ -12,6 +12,35 @@
 /////////
 @media (min-width: 768px) {
 
+  .slider__header {
+    font-size: 2.14rem;
+  }
+
+  .slider__description-container {
+    max-width: 475px;
+  }
+
+  .slider-btn {
+    font-size: 1.14rem;
+  }
+
+  .slider__caption {
+    font-size: 1.14rem;
+    margin: 0 0 35px;
+  }
+
+  .slider__current {
+    height: 40%;
+  }
+
+  .slider__description {
+    height: 30%;
+  }
+
+  .slider__thumbnails {
+    height: 30%;
+  }
+
   .hamburger {
     width: 40px;
     height: 35px;
@@ -102,10 +131,6 @@
 
   .main-footer__copyright::after {
     content: '|\00a0';
-  }
-
-  .slider__header {
-    font-size: 2.14rem;
   }
 
   .section-title {
@@ -239,12 +264,57 @@
     }
   }
 
+  .menu__link {
+    font-size: 3.5rem;
+  }
+
 }
 
 //////////
 ///1200/////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////
 @media (min-width: 1200px) {
+
+  .slider__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    background: #ebefe2;
+    justify-content: flex-end;
+  }
+
+  .slider__current {
+    order: 2;
+    height: 75%;
+    width: 50%;
+  }
+
+  .slider__current-image {
+    max-width: 95%;
+  }
+
+  .slider__description {
+    order: 1;
+    width: 50%;
+    height: 75%;
+  }
+
+  .slider__description-container {
+    position: absolute;
+    left: 25%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slider__thumbnails {
+    order: 3;
+    height: 25%;
+    width: 50%;
+  }
 
   .person-card {
     width: 380px;
@@ -255,36 +325,6 @@
     &--feedback {
       max-width: 400px;
     }
-  }
-  
-  .slider {
-    flex-direction: row;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
-
-  .slider__description {
-    width: 50%;
-    height: 100%;
-    align-self: flex-end;
-    order: 0;
-    background-color: #ebefe2;
-  }
-
-  .slider__current {
-    width: 50%;
-    min-height: 70vh;
-    order: 1;
-  }
-
-  .slider__thumbnails {
-    order: 3;
-    width: 50%;
-    min-height: 30vh;
-  }
-
-  .slider-caption {
-    margin-bottom: 60px;
   }
 
   .inner-footer__top {
@@ -412,6 +452,10 @@
     font-size: 1.14rem;
   }
 
+  .menu__link {
+    font-size: 4.5rem;
+  }
+
 }
 
 /////////
@@ -452,7 +496,15 @@
 @media (max-height: 650px) {
   #forest-map,
   .inner-header,
-  .slider {
-    min-height: 650px;
+  .slider__container {
+    height: 650px;
+  }
+
+  .menu--active {
+    position: absolute;
+  }
+
+  .hamburger--transformed {
+    position: absolute;
   }
 }
