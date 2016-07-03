@@ -2,26 +2,44 @@ doctype html
 html
   include modules/head/head.jade
   body
+    .titles.titles--fixed
+      a.titles__btn
+      ul.titles__list
+        li.titles__item.titles__item--active
+          a.titles__link Самое важное в SASS
+        li.titles__item
+          a.titles__link Приёмы в вёрстке, без которых не обходится ни один сайт
+        li.titles__item
+          a.titles__link Самый необходимый набор Gulp плагинов
+        li.titles__item
+          a.titles__link Почему я выбрал Jade
+        li.titles__item
+          a.titles__link Почему я выбрал Jade
     .preloader
       .preloader__container
         .preloader__text 0
         include ../icons/forest.svg
     include modules/menu.jade
+    .titles-click-area
     .inner-wrapper
       include modules/header/blog-header.jade
       section.blog
         .blog-inner
-          aside.titles
-            a.titles__btn
-            ul.titles__list
-              li.titles__item
-                a.titles__link.titles__link--active Самое важное в SASS
-              li.titles__item
-                a.titles__link Приёмы в вёрстке, без которых не обходится ни один сайт
-              li.titles__item
-                a.titles__link Самый необходимый набор Gulp плагинов
-              li.titles__item
-                a.titles__link Почему я выбрал Jade
+          .titles.titles--static
+            .titles__wrapper
+              .titles__left
+                ul.titles__list
+                  li.titles__item.titles__item--active
+                    a.titles__link Самое важное в SASS
+                  li.titles__item
+                    a.titles__link Приёмы в вёрстке, без которых не обходится ни один сайт
+                  li.titles__item
+                    a.titles__link Самый необходимый набор Gulp плагинов
+                  li.titles__item
+                    a.titles__link Почему я выбрал Jade
+                  li.titles__item
+                    a.titles__link Почему я выбрал Jade
+              .titles__right
           section.articles
             article.article
               h1.article__header Самое важное в SASS

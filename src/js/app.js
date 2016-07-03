@@ -63,7 +63,7 @@ $(document).ready(function() {
     $('body, html').animate({
       scrollTop: top
     }, 1500);
-  })
+  });
 
 });
 
@@ -123,27 +123,27 @@ window.onload = function() {
   }());
 
   (function() {
-  //------------------------
     var downBtn = $('.thumbnail.thumbnail--down'),
         upBtn = $('.thumbnail.thumbnail--up'),
         slide = $('.slider__current'),
+        description = $('.slider__description'),
         counterDown = 0,
         counterUp = 2,
         counterSlide = 1;
-    
-    downBtn.on('click', function() { //Слайдер вверх ---------------
+    downBtn.on('click', function() { //Вниз---------------
+      //Счётчики
       counterDown--;
       counterUp--;
       counterSlide--;
       var $this = $(this),
-          container = $this.closest('.slider'),
-          downWindow = $this.find('.thumbnail__list'),
           itemsDown = downBtn.find('.thumbnail__item'),
           itemsUp = upBtn.find('.thumbnail__item'),
           itemsSlide = slide.find('.slider__current-item'),
+          itemsDescr = description.find('.slider__description-item'),
           activeItemDown = downBtn.find('.thumbnail__item--active'),
           activeItemUp = upBtn.find('.thumbnail__item--active'),
-          activeItemSlide = slide.find('.slider__current-item--active');
+          activeItemSlide = slide.find('.slider__current-item--active'),
+          activeItemDescr = description.find('.slider__description-item--active');
 
       if (counterDown < 0) {
         counterDown = itemsDown.length-1;
@@ -159,7 +159,8 @@ window.onload = function() {
 
       var reqItemDown = itemsDown.eq(counterDown),
           reqItemUp = itemsUp.eq(counterUp),
-          reqItemSlide = itemsSlide.eq(counterSlide);
+          reqItemSlide = itemsSlide.eq(counterSlide),
+          reqItemDescr = itemsDescr.eq(counterSlide);
 
       activeItemDown.animate({
         'top': '100%'
@@ -173,6 +174,16 @@ window.onload = function() {
       reqItemSlide.fadeIn(700);
       activeItemSlide.removeClass('slider__current-item--active').css('opacity', '0');
       reqItemSlide.addClass('slider__current-item--active');
+
+      reqItemDescr.addClass('slider__description-item--active').css({
+        position: 'relative',
+        opacity: '1'
+      });
+
+      activeItemDescr.removeClass('slider__description-item--active').css({
+        position: 'absolute',
+        opacity: '0'
+      });
 
       reqItemDown.animate({
         'top' : '0'
@@ -188,20 +199,20 @@ window.onload = function() {
         reqItemUp.addClass('thumbnail__item--active');
       });
     });
-
-    upBtn.on('click', function() { //Слайдер вниз ---------------------
+    upBtn.on('click', function() { //Вверх---------------------
+      //Счётчики
       counterDown++;
       counterUp++;
       counterSlide++;
       var $this = $(this),
-          container = $this.closest('.slider'),
-          upWindow = $this.find('.thumbnail__list'),
           itemsDown = downBtn.find('.thumbnail__item'),
           itemsUp = upBtn.find('.thumbnail__item'),
           itemsSlide = slide.find('.slider__current-item'),
+          itemsDescr = description.find('.slider__description-item'),
           activeItemDown = downBtn.find('.thumbnail__item--active'),
           activeItemUp = upBtn.find('.thumbnail__item--active'),
-          activeItemSlide = slide.find('.slider__current-item--active');
+          activeItemSlide = slide.find('.slider__current-item--active'),
+          activeItemDescr = description.find('.slider__description-item--active');
 
       if (counterUp >= itemsUp.length) {
         counterUp = 0;
@@ -217,7 +228,8 @@ window.onload = function() {
 
       var reqItemDown = itemsDown.eq(counterDown),
           reqItemUp = itemsUp.eq(counterUp),
-          reqItemSlide = itemsSlide.eq(counterSlide);
+          reqItemSlide = itemsSlide.eq(counterSlide),
+          reqItemDescr = itemsDescr.eq(counterSlide);
 
       activeItemDown.animate({
         'top': '100%'
@@ -226,6 +238,16 @@ window.onload = function() {
       activeItemUp.animate({
         'top' : '-100%'
       }, 300);
+
+      reqItemDescr.addClass('slider__description-item--active').css({
+        position: 'relative',
+        opacity: '1'
+      });
+
+      activeItemDescr.removeClass('slider__description-item--active').css({
+        position: 'absolute',
+        opacity: '0'
+      });
 
       activeItemSlide.fadeOut(700);
       reqItemSlide.fadeIn(700);
@@ -245,10 +267,68 @@ window.onload = function() {
         reqItemUp.addClass('thumbnail__item--active');
       });
     });
+  }());
 
+  $(window).scroll(function() {
+    var wScroll = $(window).scrollTop(),
+        menu = $('.titles__wrapper'),
+        sideBar = $('.titles--static'),
+        stickyStart = sideBar.offset().top + 10,
+        articles = $('.articles .article'),
+        menuFixed = $('.titles--fixed'),
+        menuStatic = $('.titles--static'),
+        itemsFixed = $('.titles--fixed .titles__item'),
+        itemsStatic = $('.titles--static .titles__item'),
+        activeItemFixed = $('.titles--fixed .titles__item--active'),
+        activeItemStatic = $('.titles--static .titles__item--active');
 
-  //------------------------
+    if (wScroll >= stickyStart && !(menu.hasClass('titles__wrapper--fixed'))) {
+      menu.toggleClass('titles__wrapper--fixed');
+    }
 
+    if (wScroll < stickyStart && menu.hasClass('titles__wrapper--fixed')) {
+      menu.toggleClass('titles__wrapper--fixed');
+    }
+
+    (function() {
+      var i,
+          itemOffset = {
+            value: 0,
+            index: 0
+          },
+          offsetsMas = [];
+      for (var i = 0; i < articles.length; i++) {
+        offsetsMas.push($(articles[i]).offset().top);
+      }
+      for (var i = 0; i < articles.length; i++) {
+        if (offsetsMas[i] > itemOffset.value && offsetsMas[i] <= wScroll) {
+          itemOffset.value = offsetsMas[i];
+          itemOffset.index = i;
+        }
+      }
+      if (wScroll >= offsetsMas[offsetsMas.length-1]+$(articles[offsetsMas.length-1]).height()-800) {
+        itemOffset.value = offsetsMas[offsetsMas.length-1];
+        itemOffset.index = offsetsMas.length-1;
+      }
+      activeItemFixed.removeClass('titles__item--active');
+      activeItemStatic.removeClass('titles__item--active');
+      $(itemsFixed[itemOffset.index]).addClass('titles__item--active');
+      $(itemsStatic[itemOffset.index]).addClass('titles__item--active');
+    }());
+  });
+
+  (function(){
+    var menuFixed = $('.titles--fixed'),
+        menuBtn = menuFixed.find('.titles__btn'),
+        clickArea = $('.titles-click-area');
+    menuBtn.on('click', function(){
+      clickArea.toggleClass('titles-click-area--active');
+      menuFixed.toggleClass('titles--active');
+    });
+    clickArea.on('click', function(){
+      clickArea.toggleClass('titles-click-area--active');
+      menuFixed.toggleClass('titles--active');
+    });
   }());
 
 }

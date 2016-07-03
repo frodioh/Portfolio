@@ -12,9 +12,23 @@
           img.slider__current-image(src="http://lorempixel.com/400/400")
     .slider__description
       .slider__description-container
-        .slider__header Сайт школы онлайн образования
-        .slider__caption Html, css, javascript
-        a.slider-btn(href="#") Посмотреть сайт
+        ul.slider__description-list
+          li.slider__description-item
+            .slider__header Сайт 1
+            .slider__caption Html, css, javascript
+            a.slider-btn(href="#") Посмотреть сайт
+          li.slider__description-item.slider__description-item--active
+            .slider__header Сайт 2
+            .slider__caption Html, css, javascript
+            a.slider-btn(href="#") Посмотреть сайт
+          li.slider__description-item
+            .slider__header Сайт 3
+            .slider__caption Jade, sass, js, ruby
+            a.slider-btn(href="#") Посмотреть сайт
+          li.slider__description-item
+            .slider__header Сайт 4
+            .slider__caption Html, css
+            a.slider-btn(href="#") Посмотреть сайт
     .slider__thumbnails
       .thumbnail.thumbnail--down
         ul.thumbnail__list
