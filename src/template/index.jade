@@ -30,23 +30,23 @@ html
                     a.index-menu__link(href="about.html") Обо мне
                   li.index-menu__item
                     a.index-menu__link(href="blog.html") Блог
-            form.login-form.login-form--rotating
+            form.login-form.login-form--rotating(method="get", action="#")
               .login-form__header Авторизуйтесь
               .login-form__login-container
-                input(type="text" placeholder="Логин").login-form__login
+                input(type="text" placeholder="Логин" required).login-form__login
               .login-form__pass-container
-                input(type="password" placeholder="Пароль").login-form__pass
+                input(type="password" placeholder="Пароль" required).login-form__pass
               .login-form__captcha.captcha
-                input(type="checkbox" id="captcha").captcha__check
+                input(type="checkbox" id="captcha" required).captcha__check
                 label(for="captcha").captcha__check-label Я человек
                 .captcha__question Вы точно не робот?
-                input(type="radio" name="captcha-radio" id="captcha-radio-yes").captcha__radio
+                input(type="radio" name="captcha-radio" id="captcha-radio-yes" required).captcha__radio
                 label(for="captcha-radio-yes").captcha__radio-label Да
-                input(type="radio" name="captcha-radio" id="captcha-radio-no").captcha__radio
+                input(type="radio" name="captcha-radio" id="captcha-radio-no" required).captcha__radio
                 label(for="captcha-radio-no").captcha__radio-label Не уверен
               .login-form__links
                 a(href="index.html").login-form__link На главную
-                a(href="#").login-form__link Войти
+                input(type="submit" value="Войти").login-form__link
     footer.main-footer
       .main-footer__container
         .main-footer__copyright © Родион Федотов 

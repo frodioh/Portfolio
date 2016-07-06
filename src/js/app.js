@@ -298,7 +298,7 @@ window.onload = function() {
           },
           offsetsMas = [];
       for (var i = 0; i < articles.length; i++) {
-        offsetsMas.push($(articles[i]).offset().top);
+        offsetsMas.push($(articles[i]).offset().top-50);
       }
       for (var i = 0; i < articles.length; i++) {
         if (offsetsMas[i] > itemOffset.value && offsetsMas[i] <= wScroll) {

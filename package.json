@@ -5,6 +5,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "2.11.2",
+    "csscomb": "^3.1.8",
     "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",
     "gulp-autoprefixer": "3.1.0",
     "gulp-concat": "2.6.0",

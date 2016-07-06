@@ -390,6 +390,9 @@ body {
   color: #fff;
   text-decoration: none;
   transition: background-color .2s;
+  border: none;
+  cursor: pointer;
+  outline: none;
   &:first-child {
     border-right: 2px solid #9bb39b;
     border-radius: 0 0 0 5px;

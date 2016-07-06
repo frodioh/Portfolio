@@ -31,11 +31,11 @@ html
               Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
             .review__author Зар Захаров
             .review__caption - главный преподаватель
-        form.feedback-form
+        form.feedback-form(method="get", action="#")
           h2.feedback-form__title Связаться со мной
-          input(type="text" placeholder="Имя").feedback-form__name
-          input(type="email" placeholder="Email").feedback-form__email
-          textarea(placeholder="Ваше сообщение").feedback-form__text
+          input(type="text" placeholder="Имя", required).feedback-form__name
+          input(type="email" placeholder="Email", required).feedback-form__email
+          textarea(placeholder="Ваше сообщение", required).feedback-form__text
           .feedback-form__buttons
             input(type="submit", value="Отправить").feedback-form__submit
             input(type="button", value="Очистить").feedback-form__clear
