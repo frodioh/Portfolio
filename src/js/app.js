@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  
-  $(function() { //прелоадер---------------------------------------
+  //Прелоадер
+  $(function() {
     var imgs = [],
         percents = 1;
 
@@ -55,8 +55,8 @@ $(document).ready(function() {
     }
 
   });
-
-  $('.anchor-link').on('click', function(e) { //якорный переход---------
+  //Якорный переход
+  $('.anchor-link').on('click', function(e) {
     e.preventDefault();
     var id = $(this).attr('href'),
         top = $(id).offset().top;
@@ -64,32 +64,19 @@ $(document).ready(function() {
       scrollTop: top
     }, 1500);
   });
-
 });
-
 window.onload = function() {
-
+  var blog = !!document.getElementById("titlesWrapper");
+  //Копирование меню и вставка его в выпадающее
+  if (blog) $("#titlesWrapper .titles__list").clone().appendTo("#fixed");
+  //Авторизация и фулскрин меню
   (function() {
-    var card, form, authBtn, hamburger, menu, clickArea;
-    if (document.getElementsByClassName("index-container")[0]) {
-      card = document.getElementsByClassName("index-container")[0];
-    }
-    if (document.getElementsByClassName("login-form")[0]) {
-      form = document.getElementsByClassName("login-form")[0];
-    }
-    if (document.getElementsByClassName("authorization-btn")[0]) {
-      authBtn = document.getElementsByClassName("authorization-btn")[0];
-    }
-    if (document.getElementsByClassName("click-area")[0]) {
-      clickArea = document.getElementsByClassName("click-area")[0];
-    }
-    if (document.getElementsByClassName("hamburger")[0]) {
-      hamburger = document.getElementsByClassName("hamburger")[0];
-    }
-    if (document.getElementsByClassName("menu")[0]) {
-      menu = document.getElementsByClassName("menu")[0];
-    }
-
+    var card = document.getElementById("indexContainer"),
+        authBtn = document.getElementById("authorizationBtn"),
+        hamburger = document.getElementById("hamburger"),
+        menu = document.getElementById("menu"),
+        clickArea = document.getElementById("clickArea");
+    //Переворот на главной
     if (authBtn) {
       clickArea.onclick = function() {
         card.classList.toggle("index-container--flip");
@@ -102,6 +89,7 @@ window.onload = function() {
         clickArea.classList.toggle("click-area--display");
       }
     }
+    //Фулскрин меню
     if (hamburger) {
       hamburger.onclick = function(e) {
         var list;
@@ -121,77 +109,72 @@ window.onload = function() {
       }
     }
   }());
-
+  //Слайдер
   (function() {
-    var downBtn = $('.thumbnail.thumbnail--down'),
-        upBtn = $('.thumbnail.thumbnail--up'),
-        slide = $('.slider__current'),
-        description = $('.slider__description'),
-        counterDown = 0,
-        counterUp = 2,
-        counterSlide = 1;
-    downBtn.on('click', function() { //Вниз---------------
-      //Счётчики
+    //Переменные слайдера
+    var downBtn = $("#downBtn");
+    var upBtn = $("#upBtn");
+    var slide = $("#slide");
+    var description = $("#slideDescr");
+    var counterDown = 0;
+    var counterUp = 2;
+    var counterSlide = 1;
+    //Все элементы
+    var itemsDown = downBtn.find('.thumbnail__item'),
+        itemsUp = upBtn.find('.thumbnail__item'),
+        itemsSlide = slide.find('.slider__current-item'),
+        itemsDescr = description.find('.slider__description-item');
+    //Обработчик кнопки вниз
+    downBtn.on('click', function() {
+      //Декремент счётчиков
       counterDown--;
       counterUp--;
       counterSlide--;
-      var $this = $(this),
-          itemsDown = downBtn.find('.thumbnail__item'),
-          itemsUp = upBtn.find('.thumbnail__item'),
-          itemsSlide = slide.find('.slider__current-item'),
-          itemsDescr = description.find('.slider__description-item'),
-          activeItemDown = downBtn.find('.thumbnail__item--active'),
+      //Функция для смены слайда
+      function toggleSlide() {
+        //Скрытие активного слайда
+        activeItemSlide.fadeOut(700);
+        //Появление требуемого слайда
+        reqItemSlide.fadeIn(700);
+        //Удаление класса у бывшего активного слайда
+        activeItemSlide.removeClass('slider__current-item--active').css('opacity', '0');
+        //Добавление активного класса требуемому слайду
+        reqItemSlide.addClass('slider__current-item--active');
+        //Добавление требуемому описанию слайда активного класса
+        reqItemDescr.addClass('slider__description-item--active');
+        //Удаление класса у активного описания слайда
+        activeItemDescr.removeClass('slider__description-item--active');
+      }
+      //Активные элементы
+      var activeItemDown = downBtn.find('.thumbnail__item--active'),
           activeItemUp = upBtn.find('.thumbnail__item--active'),
           activeItemSlide = slide.find('.slider__current-item--active'),
           activeItemDescr = description.find('.slider__description-item--active');
-
-      if (counterDown < 0) {
-        counterDown = itemsDown.length-1;
-      }
-
-      if (counterUp < 0) {
-        counterUp = itemsUp.length-1;
-      }
-
-      if (counterSlide < 0) {
-        counterSlide = itemsUp.length-1;
-      }
-
+      //Если счётчики меньше нуля обновить
+      if (counterDown < 0) counterDown = itemsDown.length-1;
+      if (counterUp < 0) counterUp = itemsUp.length-1;
+      if (counterSlide < 0) counterSlide = itemsUp.length-1;
+      //Требуемые элементы
       var reqItemDown = itemsDown.eq(counterDown),
           reqItemUp = itemsUp.eq(counterUp),
           reqItemSlide = itemsSlide.eq(counterSlide),
           reqItemDescr = itemsDescr.eq(counterSlide);
-
+      //Скрытие активных миниатюр
       activeItemDown.animate({
         'top': '100%'
       }, 300);
-
       activeItemUp.animate({
         'top' : '-100%'
       }, 300);
-
-      activeItemSlide.fadeOut(700);
-      reqItemSlide.fadeIn(700);
-      activeItemSlide.removeClass('slider__current-item--active').css('opacity', '0');
-      reqItemSlide.addClass('slider__current-item--active');
-
-      reqItemDescr.addClass('slider__description-item--active').css({
-        position: 'relative',
-        opacity: '1'
-      });
-
-      activeItemDescr.removeClass('slider__description-item--active').css({
-        position: 'absolute',
-        opacity: '0'
-      });
-
+      //Смена слайда
+      toggleSlide();
+      //Появление требуемых миниатюр
       reqItemDown.animate({
         'top' : '0'
       }, 300, function() {
         activeItemDown.removeClass('thumbnail__item--active').css('top', '-100%');
         reqItemDown.addClass('thumbnail__item--active');
       });
-
       reqItemUp.animate({
         'top' : '0'
       }, 300, function() {
@@ -199,61 +182,53 @@ window.onload = function() {
         reqItemUp.addClass('thumbnail__item--active');
       });
     });
-    upBtn.on('click', function() { //Вверх---------------------
-      //Счётчики
+    //Обработчик кнопки вверх
+    upBtn.on('click', function() {
+      //Инкремент счётчиков
       counterDown++;
       counterUp++;
       counterSlide++;
-      var $this = $(this),
-          itemsDown = downBtn.find('.thumbnail__item'),
-          itemsUp = upBtn.find('.thumbnail__item'),
-          itemsSlide = slide.find('.slider__current-item'),
-          itemsDescr = description.find('.slider__description-item'),
-          activeItemDown = downBtn.find('.thumbnail__item--active'),
+      //Функция для смены слайда
+      function toggleSlide() {
+        //Скрытие активного слайда
+        activeItemSlide.fadeOut(700);
+        //Появление требуемого слайда
+        reqItemSlide.fadeIn(700);
+        //Удаление класса у бывшего активного слайда
+        activeItemSlide.removeClass('slider__current-item--active').css('opacity', '0');
+        //Добавление активного класса требуемому слайду
+        reqItemSlide.addClass('slider__current-item--active');
+        //Добавление требуемому описанию слайда активного класса
+        reqItemDescr.addClass('slider__description-item--active');
+        //Удаление класса у активного описания слайда
+        activeItemDescr.removeClass('slider__description-item--active');
+      }
+      //Активные элементы
+      var activeItemDown = downBtn.find('.thumbnail__item--active'),
           activeItemUp = upBtn.find('.thumbnail__item--active'),
           activeItemSlide = slide.find('.slider__current-item--active'),
           activeItemDescr = description.find('.slider__description-item--active');
-
+      //Обнуление счётчиков, если уходят за пределы
       if (counterUp >= itemsUp.length) {
         counterUp = 0;
       }
-
-      if (counterDown >= itemsDown.length) {
-        counterDown = 0;
-      }
-
-      if (counterSlide >= itemsDown.length) {
-        counterSlide = 0;
-      }
-
+      if (counterDown >= itemsDown.length) counterDown = 0;
+      if (counterSlide >= itemsDown.length) counterSlide = 0;
+      //Требуемые элементы
       var reqItemDown = itemsDown.eq(counterDown),
           reqItemUp = itemsUp.eq(counterUp),
           reqItemSlide = itemsSlide.eq(counterSlide),
           reqItemDescr = itemsDescr.eq(counterSlide);
-
+      //Скрытие активных миниатюр
       activeItemDown.animate({
         'top': '100%'
       }, 300);
-
       activeItemUp.animate({
         'top' : '-100%'
       }, 300);
-
-      reqItemDescr.addClass('slider__description-item--active').css({
-        position: 'relative',
-        opacity: '1'
-      });
-
-      activeItemDescr.removeClass('slider__description-item--active').css({
-        position: 'absolute',
-        opacity: '0'
-      });
-
-      activeItemSlide.fadeOut(700);
-      reqItemSlide.fadeIn(700);
-      activeItemSlide.removeClass('slider__current-item--active').css('opacity', '0');
-      reqItemSlide.addClass('slider__current-item--active');
-
+      //Смена слайда
+      toggleSlide();
+      //Появление требуемых миниатюр
       reqItemDown.animate({
         'top' : '0'
       }, 300, function() {
@@ -268,59 +243,60 @@ window.onload = function() {
       });
     });
   }());
-
+  //Сайдбар в блоге
   $(window).scroll(function() {
-    var wScroll = $(window).scrollTop(),
-        menu = $('.titles__wrapper'),
-        sideBar = $('.titles--static'),
-        stickyStart = sideBar.offset().top + 10,
-        articles = $('.articles .article'),
-        menuFixed = $('.titles--fixed'),
-        menuStatic = $('.titles--static'),
-        itemsFixed = $('.titles--fixed .titles__item'),
-        itemsStatic = $('.titles--static .titles__item'),
-        activeItemFixed = $('.titles--fixed .titles__item--active'),
-        activeItemStatic = $('.titles--static .titles__item--active');
-
-    if (wScroll >= stickyStart && !(menu.hasClass('titles__wrapper--fixed'))) {
-      menu.toggleClass('titles__wrapper--fixed');
-    }
-
-    if (wScroll < stickyStart && menu.hasClass('titles__wrapper--fixed')) {
-      menu.toggleClass('titles__wrapper--fixed');
-    }
-
-    (function() {
-      var i,
-          itemOffset = {
-            value: 0,
-            index: 0
-          },
-          offsetsMas = [];
-      for (var i = 0; i < articles.length; i++) {
-        offsetsMas.push($(articles[i]).offset().top-50);
-      }
-      for (var i = 0; i < articles.length; i++) {
-        if (offsetsMas[i] > itemOffset.value && offsetsMas[i] <= wScroll) {
-          itemOffset.value = offsetsMas[i];
-          itemOffset.index = i;
+    var scroll = $(window).scrollTop(),
+        menu = $("#titlesWrapper"),
+        sideBar = $("#static"),
+        menuFixed = $("#fixed"),
+        stickyStart,
+        articles = $(".articles .article"),
+        itemsFixed = menuFixed.find(".titles__item"),
+        itemsStatic = sideBar.find(".titles__item"),
+        activeItemFixed = menuFixed.find(".titles__item--active"),
+        activeItemStatic = sideBar.find(".titles__item--active");
+    if (blog) {
+      //Вычисление положения начала прилипания
+      stickyStart = sideBar.offset().top + 10;
+      //Если прокрутка больше положения меню и меню еще не зафиксировано, то зафиксировать
+      if (scroll >= stickyStart && !(menu.hasClass('titles__wrapper--fixed'))) menu.toggleClass('titles__wrapper--fixed');
+      //Если прокрутка меньше положения меню и меню зафиксировано, то вернуть статик
+      if (scroll < stickyStart && menu.hasClass('titles__wrapper--fixed')) menu.toggleClass('titles__wrapper--fixed');
+      //Подсвечивание текущей статьи
+      (function() {
+        var itemOffset = {
+              value: 0,
+              index: 0
+            },
+            offsetsMas = [];
+        //Создание массива с отступами всех элементов
+        for (var i = 0; i < articles.length; i++) offsetsMas.push($(articles[i]).offset().top-50);
+        //Объект содержит самый большой отступ из статей, отступ которых меньше текущего скролла
+        for (var i = 0; i < articles.length; i++) {
+          if (offsetsMas[i] > itemOffset.value && offsetsMas[i] <= scroll) {
+            itemOffset.value = offsetsMas[i];
+            itemOffset.index = i;
+          }
         }
-      }
-      if (wScroll >= offsetsMas[offsetsMas.length-1]+$(articles[offsetsMas.length-1]).height()-800) {
-        itemOffset.value = offsetsMas[offsetsMas.length-1];
-        itemOffset.index = offsetsMas.length-1;
-      }
-      activeItemFixed.removeClass('titles__item--active');
-      activeItemStatic.removeClass('titles__item--active');
-      $(itemsFixed[itemOffset.index]).addClass('titles__item--active');
-      $(itemsStatic[itemOffset.index]).addClass('titles__item--active');
-    }());
+        //Дополнительное условие для последней статьи
+        if (scroll+$(window).height() >= $(articles[offsetsMas.length-1]).offset().top+$(articles[offsetsMas.length-1]).height()) {
+          itemOffset.value = offsetsMas[offsetsMas.length-1];
+          itemOffset.index = offsetsMas.length-1;
+        }
+        //Удаление класса у активного элемента
+        activeItemFixed.removeClass('titles__item--active');
+        activeItemStatic.removeClass('titles__item--active');
+        //Добавление активного класса нужному элементу
+        $(itemsFixed[itemOffset.index]).addClass('titles__item--active');
+        $(itemsStatic[itemOffset.index]).addClass('titles__item--active');
+      }());
+    }
   });
-
+  //Выпадающий сайдбар в блоге
   (function(){
-    var menuFixed = $('.titles--fixed'),
+    var menuFixed = $("#fixed"),
         menuBtn = menuFixed.find('.titles__btn'),
-        clickArea = $('.titles-click-area');
+        clickArea = $("#titlesClickArea");
     menuBtn.on('click', function(){
       clickArea.toggleClass('titles-click-area--active');
       menuFixed.toggleClass('titles--active');
@@ -330,5 +306,4 @@ window.onload = function() {
       menuFixed.toggleClass('titles--active');
     });
   }());
-
-}
+};

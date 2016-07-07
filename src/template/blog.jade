@@ -2,31 +2,20 @@ doctype html
 html
   include modules/head/head.jade
   body
-    .titles.titles--fixed
+    .titles.titles--fixed#fixed
       a.titles__btn
-      ul.titles__list
-        li.titles__item.titles__item--active
-          a.titles__link Самое важное в SASS
-        li.titles__item
-          a.titles__link Нюансы использования цепочек одинаковых классов
-        li.titles__item
-          a.titles__link Учимся любить БЭМ
-        li.titles__item
-          a.titles__link Новая возможность языка в ES2016: оператор возведения в степень (**)
-        li.titles__item
-          a.titles__link NaN это не «не число»
     .preloader
       .preloader__container
         .preloader__text 0
         include ../icons/forest.svg
     include modules/menu.jade
-    .titles-click-area
+    .titles-click-area#titlesClickArea
     .inner-wrapper
       include modules/header/blog-header.jade
       section.blog
         .blog-inner
-          .titles.titles--static
-            .titles__wrapper
+          .titles.titles--static#static
+            .titles__wrapper#titlesWrapper
               .titles__left
                 ul.titles__list
                   li.titles__item.titles__item--active

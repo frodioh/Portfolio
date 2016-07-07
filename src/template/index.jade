@@ -8,10 +8,10 @@ html
         include ../icons/forest.svg
     .wrapper
       header.main-header
-        a.authorization-btn(href="#") Авторизоваться
+        a.authorization-btn#authorizationBtn(href="#") Авторизоваться
       .container
-        .click-area
-        .index-container
+        .click-area#clickArea
+        .index-container#indexContainer
           .flipper.flipper--unload
             .person-card.person-card--rotating
               include modules/person-info.jade
