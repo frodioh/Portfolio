@@ -244,6 +244,38 @@ window.onload = function() {
     });
   }());
   //Сайдбар в блоге
+  if (blog) {
+    var itemsFixed = $("#fixed .titles__item"),
+        itemsStatic = $("#static .titles__item"),
+        articles = $(".articles .article");
+    //Обработчик всех ссылок
+    itemsStatic.on("click", function() {
+      var index = $(this).index(),
+          top = articles.eq(index).offset().top;
+      if (articles.length-1 === index) {
+        $('body, html').animate({
+          scrollTop: articles.eq(index).offset().top + articles.eq(index).height() - $(window).height()
+        }, 1000);
+      } else {
+        $('body, html').animate({
+          scrollTop: top
+        }, 1000);
+      }
+    });
+    itemsFixed.on("click", function() {
+      var index = $(this).index(),
+          top = articles.eq(index).offset().top;
+      if (articles.length-1 === index) {
+        $('body, html').animate({
+          scrollTop: articles.eq(index).offset().top + articles.eq(index).height() - $(window).height()
+        }, 1000);
+      } else {
+        $('body, html').animate({
+          scrollTop: top
+        }, 1000);
+      }
+    });
+  }
   $(window).scroll(function() {
     var scroll = $(window).scrollTop(),
         menu = $("#titlesWrapper"),

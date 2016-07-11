@@ -156,6 +156,7 @@
 }
 
 .titles__item {
+  cursor: pointer;
   &--active .titles__link {
     color: #fff;
     font-weight: bold;
