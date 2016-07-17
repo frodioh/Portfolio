@@ -1,0 +1,87 @@
+doctype html
+html.admin
+  head
+    meta(charset='utf-8')
+    title My portfolio
+    meta(content='width=device-width, initial-scale=1' name='viewport')
+    link(rel="stylesheet", href="assets/css/main.css")
+    script(src='assets/js/foundation.js' defer)
+    script(src='assets/js/app.js' defer)
+  body.admin
+    .admin-wrapper
+      header.admin-header
+        h1.admin-header__title Панель администрирования
+        a(href="index.html").admin-header__back Вернуться на сайт
+      main.tabs
+        input(type="radio", name="tab", id="tab-1", checked)
+        label(for="tab-1") Обо мне
+        input(type="radio", name="tab", id="tab-2")
+        label(for="tab-2") Блог
+        input(type="radio", name="tab", id="tab-3")
+        label(for="tab-3") Мои работы
+        .tabs__content
+          .tab
+            h2.tab__header Страница «Обо мне»
+            form(method="post").skills-form
+              .skills-form__section
+                h3.tab__header.tab__header--little Frontend
+                .skills-form__skill
+                  label(for="html").skills-form__label Html
+                  input(type="text", id="html").skills-form__input
+                  span %
+                .skills-form__skill
+                  label(for="css").skills-form__label CSS
+                  input(type="text", id="css").skills-form__input
+                  span %
+                .skills-form__skill
+                  label(for="js").skills-form__label JavaScript
+                  input(type="text", id="js").skills-form__input
+                  span %
+              .skills-form__section
+                h3.tab__header.tab__header--little Workflow
+                .skills-form__skill
+                  label(for="git").skills-form__label Git
+                  input(type="text", id="git").skills-form__input
+                  span %
+                .skills-form__skill
+                  label(for="gulp").skills-form__label Gulp
+                  input(type="text", id="gulp").skills-form__input
+                  span %
+                .skills-form__skill
+                  label(for="bower").skills-form__label Bower
+                  input(type="text", id="bower").skills-form__input
+                  span %
+              .skills-form__section
+                h3.tab__header.tab__header--little Backend
+                .skills-form__skill
+                  label(for="php").skills-form__label PHP
+                  input(type="text", id="php").skills-form__input
+                  span %
+                .skills-form__skill
+                  label(for="nodejs").skills-form__label Node.js
+                  input(type="text", id="nodejs").skills-form__input
+                  span %
+                .skills-form__skill
+                  label(for="mongodb").skills-form__label Mongo.db
+                  input(type="text", id="mongodb").skills-form__input
+                  span %
+              .skills-form__btn
+                button(type="submit").admin-btn Сохранить
+          .tab
+            h2.tab__header Страница «Блог»
+            form(method="post").blog-form
+              h3.tab__header.tab__header--little Добавить запись
+              input(type="text", placeholder="Название").blog-form__title
+              input(type="text", placeholder="Дата").blog-form__date
+              textarea(placeholder="Содержание").blog-form__text
+              button(type="submit").admin-btn Добавить
+          .tab
+            h2.tab__header Страница «Мои работы»
+            form(method="post").works-form
+              h3.tab__header.tab__header--little Добавить работу
+              input(type="text", placeholder="Название проекта").works-form__title
+              input(type="text", placeholder="Технологии").works-form__tech
+              input(type="url", placeholder="Ссылка").works-form__link
+              input(type="file", id="works-file")
+              label(for="works-file").works-form__image-btn Загрузить картинку
+              button(type="submit").admin-btn Добавить

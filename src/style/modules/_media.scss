@@ -268,6 +268,47 @@
     font-size: 3.5rem;
   }
 
+  .admin-header{
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  .tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: stretch;
+  }
+
+  .tabs > label {
+    width: 33.3333333%;
+    border: none;
+  }
+
+  .tabs__content {
+    flex-grow: 1;
+  }
+
+  .blog-form,
+  .works-form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .blog-form__title,
+  .blog-form__date,
+  .blog-form__text,
+  .works-form__title,
+  .works-form__tech,
+  .works-form__link {
+    max-width: 300px;
+  }
+
+  .blog-form__text {
+    max-width: 500px;
+  }
 }
 
 //////////
@@ -465,6 +506,42 @@
 
   .menu__link {
     font-size: 4.5rem;
+  }
+
+  .skills-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 500px;
+  }
+
+  .skills-form__section {
+    width: 50%;
+  }
+
+  .skills-form__btn {
+    width: 100%;
+  }
+
+  .admin-header__title {
+    font-size: 1.75rem;
+  }
+
+  .tabs > label {
+    font-size: 1rem;
+  }
+
+  .tab__header {
+    font-size: 1.31rem;
+  }
+
+  .tab__header--little,
+  .skills-form__skill>label,
+  .skills-form__skill>span,
+  .admin-btn,
+  .admin-header__back {
+    font-size: 1rem;
   }
 
 }
