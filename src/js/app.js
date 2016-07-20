@@ -103,7 +103,14 @@ window.onload = function() {
           contentType: 'application/json; charset=utf8',
           dataType: 'json',
           success: function(data, status) {
-            location = "/admin.html";
+            if(data.isValid) {
+              location = "/admin.html";
+            } else {
+              authModal.classList.add("active");
+              authArea.classList.add("active");
+              parentElem.appendChild(childElem);
+              childElem.innerHTML = "Неверный логин или пароль!";
+            }
           }
         });
       } else {
