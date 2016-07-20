@@ -91,19 +91,17 @@ app.post('/auth', function(req,res) {
     "password": password
   }, function(err, doc) {
     if(!err&&doc) {
-      if((data.check===true)&&(data.check===true)) {
-        res.setHeader('Content-Type', 'application/json; charset=utf8');
-        var content = {
-          "isValid": true
-        };
-        req.session.isAdmin = true;
-        res.send(JSON.stringify(content));
-      } else {
-        var content = {
-          "isValid": false
-        };
-        res.send(JSON.stringify(content));
-      }
+      res.setHeader('Content-Type', 'application/json; charset=utf8');
+      var content = {
+        "isValid": true
+      };
+      req.session.isAdmin = true;
+      res.send(JSON.stringify(content));
+    } else {
+      var content = {
+        "isValid": false
+      };
+      res.send(JSON.stringify(content));
       res.end();
     }
   });
