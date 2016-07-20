@@ -14,8 +14,7 @@
   "mail": {
     "subject": "Сообщение с сайта-портфолио",
     "smtp": {
-      "host": "smtp.gmail.com",
-      "port": 465,
+      "service": "Gmail",
       "auth": {
         "user": "fedotov.dev@gmail.com",
         "pass": "coFFee42"
