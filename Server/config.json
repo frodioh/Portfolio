@@ -14,10 +14,12 @@
   "mail": {
     "subject": "Сообщение с сайта-портфолио",
     "smtp": {
-      "service": "Gmail",
+      "host": "smtp.yandex.ru",
+      "port": 465,
+      "secure": true,
       "auth": {
-        "user": "fedotov.dev@gmail.com",
-        "pass": "coFFee42"
+        "user": "fedotov.rodion@yandex.ru",
+        "pass": "4815162342"
       }
     }
   }
