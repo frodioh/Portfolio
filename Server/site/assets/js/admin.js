@@ -53,27 +53,30 @@ window.onload = function() {
           "date": document.getElementById("postDate").value,
           "body": document.getElementById("postText").value
         };
-    //var xhr = new XMLHttpRequest();
-    //xhr.open("POST", '/blog');
-    //xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
-    //xhr.send(JSON.stringify(data));
-    $.ajax({
-      type: 'POST',
-      url: '/blog',
-      contentType: 'application/json; charset=utf8',
-      data: JSON.stringify(data),
-      success: function(data){
-        if(data.isValid===true) {
-          area.classList.add("admin-block-area--active");
-          modal.classList.add("admin-modal--active");
+    if((data.title!="")&&(data.body!="")) {
+      $.ajax({
+        type: 'POST',
+        url: '/blog',
+        contentType: 'application/json; charset=utf8',
+        data: JSON.stringify(data),
+        success: function(data){
+          if(data.isValid===true) {
+            area.classList.add("admin-block-area--active");
+            modal.classList.add("admin-modal--active");
+          }
+          if(data.isValid===false) {
+            area.classList.add("admin-block-area--active");
+            modal.classList.add("admin-modal--active");
+            modalText.innerHTML = "Дата неправильная((<br> Попробуй DD.MM.YYYY";
+          }
         }
-        if(data.isValid===false) {
-          area.classList.add("admin-block-area--active");
-          modal.classList.add("admin-modal--active");
-          modalText.innerHTML = "Дата неправильная((<br> Попробуй DD.MM.YYYY"
-        }
-      }
-    });
+      });
+    } else {
+      area.classList.add("admin-block-area--active");
+      modal.classList.add("admin-modal--active");
+      modalText.innerHTML = "Посмотри-ка, поля ведь не заполнены";
+    }
+    
   });
   workForm.addEventListener('submit', function(e) {
     e.preventDefault();
