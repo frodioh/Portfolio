@@ -126,7 +126,7 @@ app.get('/admin.html', function(req,res) {
   };
   var promise = new Promise(function(resolve, reject) {
     Skill.findOne({section: "frontend"}, function(err,doc) {
-      if(!err&&doc) {
+      if(doc) {
         skills.frontend.html = ""+doc.items[0].value;
         skills.frontend.css = ""+doc.items[1].value;
         skills.frontend.js = ""+doc.items[2].value;
@@ -145,6 +145,8 @@ app.get('/admin.html', function(req,res) {
             });
           }
         });
+      } else {
+        resolve();
       }
     });
   });
