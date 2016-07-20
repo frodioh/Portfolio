@@ -73,7 +73,7 @@ html.admin
                 button(type="button")#skillsBtn.admin-btn Сохранить
           .tab
             h2.tab__header Страница «Блог»
-            form(method="post").blog-form
+            form(method="post")#blogForm.blog-form
               h3.tab__header.tab__header--little Добавить запись
               input(type="text", placeholder="Название", name="title", required)#postTitle.blog-form__title
               input(type="text", placeholder="Дата", name="date", required)#postDate.blog-form__date
