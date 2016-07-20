@@ -63,6 +63,7 @@ window.onload = function() {
           if(data.isValid===true) {
             area.classList.add("admin-block-area--active");
             modal.classList.add("admin-modal--active");
+            $('#blogForm')[0].reset();
           }
           if(data.isValid===false) {
             area.classList.add("admin-block-area--active");
