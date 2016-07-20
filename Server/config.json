@@ -18,7 +18,7 @@
       "port": 465,
       "secure": true,
       "auth": {
-        "user": "fedotov.rodion@yandex.ru",
+        "user": "fedotov.rodion",
         "pass": "4815162342"
       }
     }

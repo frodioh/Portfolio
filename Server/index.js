@@ -235,7 +235,7 @@ app.post('/mail', function(req,res) {
   var transporter = nodemailer.createTransport(config.mail.smtp);
   var mailOptions = {
       from: `"${req.body.name}" <${req.body.email}>`,
-      to: config.mail.smtp.auth.user,
+      to: config.mail.smtp.auth.user+"@yandex.ru",
       subject: config.mail.subject,
       text: req.body.text.trim().slice(0, 500)
   };
