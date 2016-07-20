@@ -232,6 +232,7 @@ app.get('/about.html', function(req,res) {
 });
 
 app.post('/mail', function(req,res) {
+  console.log(req.body);
   var transporter = nodemailer.createTransport(config.mail.smtp);
   var mailOptions = {
       from: `"${req.body.name}" <${req.body.email}>`,
