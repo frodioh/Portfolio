@@ -1,6 +1,6 @@
 {
   "db": {
-    "host": "localhost",
+    "host": "85.143.213.73",
     "port": "23315",
     "name": "portfolio",
     "user": "radio",
@@ -8,7 +8,7 @@
   },
   "http": {
     "port": 3000,
-    "host": "localhost",
+    "host": "85.143.213.73",
     "publicRoot": "site"
   },
   "mail": {
