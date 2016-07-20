@@ -74,7 +74,6 @@ window.onload = function() {
     var authArea = document.getElementById("authArea");
     var parentElem = authModal;
     var childElem = document.createElement("span");
-    childElem.innerHTML = "Прочь, железяка!"
     authBtn.addEventListener("click", function(e) {
       e.preventDefault();
       authModal.classList.remove("active");
@@ -117,6 +116,7 @@ window.onload = function() {
         authModal.classList.add("active");
         authArea.classList.add("active");
         parentElem.appendChild(childElem);
+        childElem.innerHTML = "Прочь, железяка!";
       }
     });
   }
