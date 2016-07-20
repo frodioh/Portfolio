@@ -1,13 +1,13 @@
 {
   "db": {
     "host": "85.143.213.73",
-    "port": "23315",
-    "name": "portfolio",
+    "port": "27017",
+    "name": "test",
     "user": "radio",
     "password": "rodeo"
   },
   "http": {
-    "port": 3000,
+    "port": 80,
     "host": "85.143.213.73",
     "publicRoot": "site"
   },
