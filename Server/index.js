@@ -91,7 +91,7 @@ app.post('/auth', function(req,res) {
     "password": password
   }, function(err, doc) {
     if(!err&&doc) {
-      if((data.check==='on')&&(data.check==='on')) {
+      if((data.check===true)&&(data.check===true)) {
         res.setHeader('Content-Type', 'application/json; charset=utf8');
         var content = {
           "isValid": true
