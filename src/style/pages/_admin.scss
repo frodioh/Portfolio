@@ -216,3 +216,42 @@ html.admin, body.admin {
 #works-file {
   display: none;
 }
+
+.admin-block-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  display: none;
+  &--active {
+    display: block;
+  }
+}
+
+.admin-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 20px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  background: #fff;
+  border-radius: 10px;
+  z-index: 10;
+  &--active {
+    display: flex;
+  }
+}
+
+.admin-modal__text {
+  margin: 0 0 15px 0;
+  font: normal 1rem 'Roboto', Arial, sans-serif;
+  color: #373e42;
+}

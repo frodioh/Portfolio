@@ -11,5 +11,10 @@ module.exports = [
   './gulp/tasks/js.lint.js',
   './gulp/tasks/copy.image.js',
   './gulp/tasks/copy.fonts.js',
-  './gulp/tasks/copy.icons.js'
+  './gulp/tasks/copy.icons.js',
+  './gulp/tasks/js.admin.js',
+  './gulp/tasks/clean.server.js',
+  './gulp/tasks/copy.assets.js',
+  './gulp/tasks/copy.template.js',
+  './gulp/tasks/clean.template.js'
 ];

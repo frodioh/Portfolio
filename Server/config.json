@@ -1,0 +1,26 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": "23315",
+    "name": "portfolio",
+    "user": "radio",
+    "password": "rodeo"
+  },
+  "http": {
+    "port": 3000,
+    "host": "localhost",
+    "publicRoot": "site"
+  },
+  "mail": {
+    "subject": "Сообщение с сайта-портфолио",
+    "smtp": {
+      "host": "smtp.gmail.com",
+      "port": 465,
+      "secure": true,
+      "auth": {
+        "user": "fedotov.dev@gmail.com",
+        "pass": "coFFee42"
+      }
+    }
+  }
+}

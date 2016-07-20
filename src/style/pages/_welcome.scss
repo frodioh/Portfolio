@@ -433,3 +433,51 @@ body {
   font: normal 1.14rem 'Roboto', Arial, sans-serif;
   display: inline-block;
 }
+
+#authArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  display: none;
+  background: rgba(0,0,0,.2);
+  &.active{
+    display: block;
+  }
+}
+
+#authModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 10;
+  padding: 20px;
+  font-size: 30px;
+  margin: auto;
+  display: none;
+  background: #fff;
+  color: #000;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  &.active {
+    display: block;
+  }
+}
+
+#authModalBtn {
+  position: absolute;
+  text-indent: -1000px;
+  text-decoration: none;
+  top: -10px;
+  right: -10px;
+  z-index: 11;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #000;
+  display: block;
+}

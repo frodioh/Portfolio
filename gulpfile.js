@@ -8,7 +8,8 @@ global.$ = {
     template: require('./gulp/paths/template.js'),
     jsFoundation: require('./gulp/paths/js.foundation.js'),
     cssFoundation: require('./gulp/paths/css.foundation.js'),
-    app: require('./gulp/paths/app.js')
+    app: require('./gulp/paths/app.js'),
+    admin: require('./gulp/paths/admin.js')
   },
   gulp: require('gulp'),
   rimraf: require('rimraf'),
@@ -40,6 +41,7 @@ $.gulp.task('default', $.gulp.series(
     'jade',
     'js.foundation',
     'js.process',
+    'js.admin',
     'copy.image',
     'copy.fonts',
     'copy.icons'
@@ -47,5 +49,23 @@ $.gulp.task('default', $.gulp.series(
   $.gulp.parallel(
     'watch',
     'serve'
+  )
+));
+
+$.gulp.task('server', $.gulp.series(
+  'clean.server',
+  'clean.template',
+  $.gulp.parallel(
+    'sass',
+    'js.foundation',
+    'js.admin',
+    'js.process',
+    'copy.image',
+    'copy.fonts',
+    'copy.icons'
+  ),
+  $.gulp.parallel(
+    'copy.assets',
+    'copy.template'
   )
 ));
